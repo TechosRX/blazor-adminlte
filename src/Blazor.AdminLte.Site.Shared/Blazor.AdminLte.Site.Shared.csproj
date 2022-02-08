@@ -5,16 +5,18 @@
     <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
     <LangVersion>10</LangVersion>
   </PropertyGroup>
-
-
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="5.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.14" Condition="'$(TargetFramework)' == 'net5.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="5.0.14" Condition="'$(TargetFramework)' == 'net5.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.14" Condition="'$(TargetFramework)' == 'net5.0'" />
     <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.2" Condition="'$(TargetFramework)' == 'net6.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.2" Condition="'$(TargetFramework)' == 'net6.0'" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.2" Condition="'$(TargetFramework)' == 'net6.0'" />
   </ItemGroup>
-
-
+  
   <ItemGroup>
     <ProjectReference Include="..\Blazor.AdminLte\Blazor.AdminLte.csproj" />
   </ItemGroup>
